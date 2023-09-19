@@ -11,7 +11,11 @@ const config: Config = {
       poppins: ['"Poppins"'],
       gilroy: ['"Gilroy"'],
     },
-    extend: {},
+    extend: {
+      backgroundImage: {
+        footer: "url('/images/footer.png')",
+      },
+    },
   },
   plugins: [],
 };

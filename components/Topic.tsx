@@ -21,6 +21,18 @@ const Topic = () => {
           <Image src="/images/circle.svg" alt="circle" width={56} height={56} />
         </span>
       </h1>
+
+      {/* <span className="relative">
+        <Image src="/images/laptop.png" alt="circle" width={387} height={218} />
+        <Image
+          src="/images/content.png"
+          alt="circle"
+          width={295}
+          height={189}
+          className="absolute top-0 left-0"
+        />
+      </span> */}
+
       <h1 className="relative font-gilroy text-white font-bold text-[88px] text-left leading-[84px]">
         Gaming History Begins
         <span className="font-poppins text-lg font-normal leading-8 text-white absolute -bottom-16 left-36">
