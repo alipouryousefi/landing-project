@@ -3,7 +3,10 @@ import React from "react";
 
 const Topic = () => {
   return (
-    <section className="w-[80%]">
+    <section className="w-[80%] relative">
+      <span className="absolute -top-full right-0">
+        <Image src="/images/laptop.png" alt="circle" width={387} height={218} />
+      </span>
       <h1 className="relative font-gilroy text-white font-bold text-[88px] text-left leading-[84px] inline">
         Where Web3
         <span className="absolute -top-3 -right-5">
@@ -21,17 +24,6 @@ const Topic = () => {
           <Image src="/images/circle.svg" alt="circle" width={56} height={56} />
         </span>
       </h1>
-
-      {/* <span className="relative">
-        <Image src="/images/laptop.png" alt="circle" width={387} height={218} />
-        <Image
-          src="/images/content.png"
-          alt="circle"
-          width={295}
-          height={189}
-          className="absolute top-0 left-0"
-        />
-      </span> */}
 
       <h1 className="relative font-gilroy text-white font-bold text-[88px] text-left leading-[84px]">
         Gaming History Begins

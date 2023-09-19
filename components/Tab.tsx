@@ -1,7 +1,25 @@
+import { selectedTabTypes } from "@/types";
 import Image from "next/image";
-import React from "react";
+import { useState } from "react";
+import { InviteForm } from ".";
+
+const selectedStyles = "bg-white font-semibold";
+const unSelectedStyles =
+  "bg-[#0078F2] text-white font-normal hover:opacity-80 duration-300 transition-all ease-in-out";
+
+interface TabPanelProps {
+  children?: React.ReactNode;
+  index: number;
+}
 
 const Tab = () => {
+  const [selecetedTab, setSelectedTab] = useState<selectedTabTypes>(0);
+  const CustomTabPanel = (props: TabPanelProps) => {
+    const { children, index, ...other } = props;
+    return (
+      <div role="tabpanel">{selecetedTab === index && <>{children}</>}</div>
+    );
+  };
   return (
     <section className="mt-28 ml-56 flex flex-col justify-center items-start w-full z-20 -mb-16">
       <div className="border-b border-gray-200 dark:border-gray-700">
@@ -13,98 +31,63 @@ const Tab = () => {
         >
           <li className="" role="presentation">
             <button
-              className="inline-block px-12 py-4 border-x-2 border-white rounded-tl-xl bg-white font-poppins text-base font-semibold leading-6"
+              className={`inline-block px-12 py-4 rounded-tl-xl font-poppins text-base leading-6 ${
+                selecetedTab === 0 ? selectedStyles : unSelectedStyles
+              }`}
               id="profile-tab"
               data-tabs-target="#profile"
               type="button"
               role="tab"
               aria-controls="profile"
               aria-selected="false"
+              onClick={() => setSelectedTab(0)}
             >
               Join
             </button>
           </li>
           <li className="" role="presentation">
             <button
-              className="inline-block px-3 py-4 bg-[#0078F2] font-poppins text-base font-normal leading-6 text-white border-r border-[rgba(255, 255, 255, 0.50)]"
+              className={`inline-block px-3 py-4 font-poppins text-base leading-6 border-r border-[rgba(255, 255, 255, 0.50)] ${
+                selecetedTab === 10 ? selectedStyles : unSelectedStyles
+              }`}
               id="profile-tab"
               data-tabs-target="#profile"
               type="button"
               role="tab"
               aria-controls="profile"
               aria-selected="false"
+              onClick={() => setSelectedTab(10)}
             >
               Leaderboard
             </button>
           </li>
           <li className="" role="presentation">
             <button
-              className="inline-block px-4 py-4 bg-[#0078F2] font-poppins text-base font-normal leading-6 text-white rounded-tr-xl overflow-hidden"
+              className={`inline-block px-4 py-4 text-base leading- rounded-tr-xl ${
+                selecetedTab === 20 ? selectedStyles : unSelectedStyles
+              }`}
               id="profile-tab"
               data-tabs-target="#profile"
               type="button"
               role="tab"
               aria-controls="profile"
               aria-selected="false"
+              onClick={() => setSelectedTab(20)}
             >
               Your Friends
             </button>
           </li>
         </ul>
       </div>
-      <div
-        className="bg-white flex justify-around items-center rounded-b-xl rounded-tr-xl"
-        id="myTabContent"
-      >
-        <div className="flex flex-col justify-center items-start pt-8 pb-11 pl-10 w-[300px]">
-          <span className="flex justify-start items-center">
-            <Image
-              src={"/images/sms.svg"}
-              width={24}
-              height={24}
-              className="object-contain"
-              alt="sms"
-            />
-            <span className="font-poppins text-xl font-medium leading-8 pl-2">
-              Your Email
-            </span>
-          </span>
-          <input
-            type="text"
-            className="font-poppins text-base font-semibold leading-5 border-0 outline-none w-full mt-3"
-            value={"Rezanmdesign@gmail.com"}
-          />
-        </div>
-        <div className="flex flex-col justify-center items-start pt-8 pb-11 pl-10 w-[300px]">
-          <span className="flex justify-start items-center">
-            <Image
-              src={"/images/sms-star.svg"}
-              width={24}
-              height={24}
-              className="object-contain"
-              alt="sms"
-            />
-            <span className="font-poppins text-xl font-medium leading-8 pl-2">
-              Who invited you?
-            </span>
-          </span>
-          <input
-            type="text"
-            className="font-poppins text-base font-semibold leading-5 border-0 outline-none w-full mt-3"
-            value={"Hi@abol.dev"}
-          />
-        </div>
-        <button className="ml-64 bg-[#0078F2] px-12 py-11 h-full text-white font-poppins text-xl font-bold leading-8 rounded-r-xl btn-shadow">
-          <Image
-            src={"/images/sms-tracking.svg"}
-            width={24}
-            height={24}
-            className="object-contain"
-            alt="sms"
-          />
-          JOIN
-        </button>
-      </div>
+      <CustomTabPanel index={0}>
+        <InviteForm />
+      </CustomTabPanel>
+      <CustomTabPanel index={10}>
+        <InviteForm />
+      </CustomTabPanel>
+      <CustomTabPanel index={20}>
+        <InviteForm />
+      </CustomTabPanel>
     </section>
   );
 };

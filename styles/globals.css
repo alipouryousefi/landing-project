@@ -13,3 +13,7 @@
 .btn-shadow {
   filter: drop-shadow(-46px 15px 42px rgba(0, 120, 242, 0.35));
 }
+
+body {
+  overflow-x: hidden;
+}
