@@ -18,15 +18,15 @@ const Footer = () => {
           </span>
           <div className="flex justify-center items-center">
             <ul className="flex items-center justify-center">
-              <li className="text-white text-right font-gilroy text-lg font-semibold leading-7 underline capitalize cursor-pointer">
+              <li className="text-white text-right font-gilroy text-lg font-semibold leading-7 underline capitalize cursor-pointer hover:opacity-80 duration-300 ease-out transition-all">
                 privacy
               </li>
-              <li className="text-white text-right font-gilroy text-lg font-semibold leading-7 underline capitalize ml-6 cursor-pointer">
+              <li className="text-white text-right font-gilroy text-lg font-semibold leading-7 underline capitalize ml-6 cursor-pointer hover:opacity-80 duration-300 ease-out transition-all">
                 terms and condition
               </li>
             </ul>
             <ul className="flex items-center justify-center ml-12">
-              <li>
+              <li className="cursor-pointer hover:opacity-80 duration-300 ease-out transition-all">
                 <Image
                   src={"/images/twitter.svg"}
                   width={24}
@@ -34,7 +34,7 @@ const Footer = () => {
                   alt="twitter"
                 />
               </li>
-              <li className="mx-6">
+              <li className="mx-6 cursor-pointer hover:opacity-80 duration-300 ease-out transition-all">
                 <Image
                   src={"/images/linkedin.svg"}
                   width={24}
@@ -42,7 +42,7 @@ const Footer = () => {
                   alt="linkedin"
                 />
               </li>
-              <li>
+              <li className="cursor-pointer hover:opacity-80 duration-300 ease-out transition-all">
                 <Image
                   src={"/images/discord.svg"}
                   width={24}

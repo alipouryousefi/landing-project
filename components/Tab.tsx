@@ -2,6 +2,7 @@ import { selectedTabTypes } from "@/types";
 import Image from "next/image";
 import { useState } from "react";
 import { InviteForm } from ".";
+import { motion } from "framer-motion";
 
 const selectedStyles = "bg-white font-semibold";
 const unSelectedStyles =
@@ -15,13 +16,17 @@ interface TabPanelProps {
 const Tab = () => {
   const [selecetedTab, setSelectedTab] = useState<selectedTabTypes>(0);
   const CustomTabPanel = (props: TabPanelProps) => {
-    const { children, index, ...other } = props;
+    const { children, index } = props;
     return (
       <div role="tabpanel">{selecetedTab === index && <>{children}</>}</div>
     );
   };
   return (
-    <div className="w-full flex justify-center items-center">
+    <motion.div
+      animate={{ y: [100, 0], zIndex: 20 }}
+      transition={{ duration: 1 }}
+      className="w-full flex justify-center items-center"
+    >
       <section className="mt-28 flex flex-col justify-center items-center w-full z-20 -mb-16">
         <div>
           <div>
@@ -92,7 +97,7 @@ const Tab = () => {
           </CustomTabPanel>
         </div>
       </section>
-    </div>
+    </motion.div>
   );
 };
 

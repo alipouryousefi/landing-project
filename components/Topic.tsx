@@ -1,13 +1,24 @@
 import Image from "next/image";
 import React from "react";
+import { motion } from "framer-motion";
 
 const Topic = () => {
   return (
     <section className="w-[80%] relative">
-      <span className="absolute -top-full right-0">
+      <motion.span
+        animate={{ x: [100, 0] }}
+        transition={{ duration: 1 }}
+        className="absolute -top-full right-0"
+      >
         <Image src="/images/laptop.png" alt="circle" width={387} height={218} />
-      </span>
-      <h1 className="relative font-gilroy text-white font-bold text-[88px] text-left leading-[84px] inline">
+      </motion.span>
+      <motion.h1
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+        className="relative font-gilroy text-white font-bold text-[88px] text-left leading-[84px] inline"
+      >
         Where Web3
         <span className="absolute -top-3 -right-5">
           <Image src="/images/circle.svg" alt="circle" width={56} height={56} />
@@ -23,9 +34,15 @@ const Topic = () => {
         <span className="absolute -top-3 left-14">
           <Image src="/images/circle.svg" alt="circle" width={56} height={56} />
         </span>
-      </h1>
+      </motion.h1>
 
-      <h1 className="relative font-gilroy text-white font-bold text-[88px] text-left leading-[84px]">
+      <motion.h1
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+        className="relative font-gilroy text-white font-bold text-[88px] text-left leading-[84px]"
+      >
         Gaming History Begins
         <span className="font-poppins text-lg font-normal leading-8 text-white absolute -bottom-16 left-36">
           Be Among the First Creators on 3engine
@@ -50,7 +67,7 @@ const Topic = () => {
             height={18}
           />
         </span>
-      </h1>
+      </motion.h1>
     </section>
   );
 };

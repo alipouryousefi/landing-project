@@ -3,7 +3,7 @@ import React from "react";
 
 const Header = () => {
   return (
-    <header className="w-full flex justify-start items-center lg:px-[146px] lg:mt-[51px]">
+    <header className="w-full flex justify-start items-center lg:px-36 lg:mt-12">
       <Image
         src={"/images/logo.png"}
         alt="logo"
