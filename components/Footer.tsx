@@ -3,7 +3,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="mt-32 relative">
+    <footer className="relative z-10">
       <Image
         src={"/images/footer.png"}
         alt="footer"

@@ -2,10 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-@import './fonts.css';
+@import "./fonts.css";
 
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+.btn-shadow {
+  filter: drop-shadow(-46px 15px 42px rgba(0, 120, 242, 0.35));
 }
