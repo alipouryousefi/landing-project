@@ -1,5 +1,4 @@
 import { selectedTabTypes } from "@/types";
-import Image from "next/image";
 import { useState } from "react";
 import { InviteForm } from ".";
 import { motion } from "framer-motion";
@@ -40,7 +39,7 @@ const Tabs = () => {
                 <li className="" key={tabIndex} role="presentation">
                   <button
                     className={`inline-block px-${
-                      tabIndex === 20 ? 4 : 12
+                      tabIndex === 0 ? 12 : 6
                     } py-4 ${
                       tabIndex === 10
                         ? "border-r border-[rgba(255, 255, 255, 0.50)]"
