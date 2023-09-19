@@ -4,6 +4,12 @@ import { useForm, Controller } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { CustomInput } from ".";
+import { useMutation } from "@tanstack/react-query";
+import axios from "axios";
+import { inviteUrl } from "@/constants/endpoints";
+import { useEffect } from "react";
+import { toast } from "react-toastify";
+import ReactLoading from "react-loading";
 
 const InviteForm = () => {
   const schema = yup.object().shape({
@@ -28,10 +34,24 @@ const InviteForm = () => {
     },
   });
 
+  const { isSuccess, isLoading, isError, mutate } = useMutation({
+    mutationFn: (data: InviteFormTypes) => {
+      return axios.post(inviteUrl, data);
+    },
+  });
+
   const onSubmit = (data: InviteFormTypes) => {
-    // Handle form submission
-    console.log(data);
+    mutate(data);
   };
+
+  useEffect(() => {
+    if (isSuccess) {
+      toast.success("Your invitation has been submitted.");
+    }
+    if (isError) {
+      toast.error("Sorry, something went wrong.");
+    }
+  }, [isSuccess, isError]);
 
   return (
     <form
@@ -81,17 +101,24 @@ const InviteForm = () => {
       />
 
       <button
-        className="ml-64 bg-[#0078F2] px-12 py-11 h-full text-white font-poppins text-xl font-bold leading-8 rounded-r-xl btn-shadow"
+        className="ml-52 bg-[#0078F2] px-12 h-[144px] w-[143px] text-white font-poppins text-xl font-bold leading-8 rounded-r-xl btn-shadow relative"
         type="submit"
+        disabled={isLoading}
       >
-        <Image
-          src={"/images/sms-tracking.svg"}
-          width={24}
-          height={24}
-          className="object-contain"
-          alt="sms"
-        />
-        JOIN
+        {isLoading ? (
+          <ReactLoading type="spin" color="#fff" height={32} width={32} />
+        ) : (
+          <>
+            <Image
+              src={"/images/sms-tracking.svg"}
+              width={24}
+              height={24}
+              className="object-contain"
+              alt="sms"
+            />
+            JOIN
+          </>
+        )}
       </button>
     </form>
   );

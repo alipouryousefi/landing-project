@@ -21,74 +21,78 @@ const Tab = () => {
     );
   };
   return (
-    <section className="mt-28 ml-56 flex flex-col justify-center items-start w-full z-20 -mb-16">
-      <div className="border-b border-gray-200 dark:border-gray-700">
-        <ul
-          className="flex flex-wrap -mb-px text-sm font-medium text-center"
-          id="myTab"
-          data-tabs-toggle="#myTabContent"
-          role="tablist"
-        >
-          <li className="" role="presentation">
-            <button
-              className={`inline-block px-12 py-4 rounded-tl-xl font-poppins text-base leading-6 ${
-                selecetedTab === 0 ? selectedStyles : unSelectedStyles
-              }`}
-              id="profile-tab"
-              data-tabs-target="#profile"
-              type="button"
-              role="tab"
-              aria-controls="profile"
-              aria-selected="false"
-              onClick={() => setSelectedTab(0)}
+    <div className="w-full flex justify-center items-center">
+      <section className="mt-28 flex flex-col justify-center items-center w-full z-20 -mb-16">
+        <div>
+          <div>
+            <ul
+              className="flex flex-wrap text-sm font-medium text-center"
+              id="myTab"
+              data-tabs-toggle="#myTabContent"
+              role="tablist"
             >
-              Join
-            </button>
-          </li>
-          <li className="" role="presentation">
-            <button
-              className={`inline-block px-3 py-4 font-poppins text-base leading-6 border-r border-[rgba(255, 255, 255, 0.50)] ${
-                selecetedTab === 10 ? selectedStyles : unSelectedStyles
-              }`}
-              id="profile-tab"
-              data-tabs-target="#profile"
-              type="button"
-              role="tab"
-              aria-controls="profile"
-              aria-selected="false"
-              onClick={() => setSelectedTab(10)}
-            >
-              Leaderboard
-            </button>
-          </li>
-          <li className="" role="presentation">
-            <button
-              className={`inline-block px-4 py-4 text-base leading- rounded-tr-xl ${
-                selecetedTab === 20 ? selectedStyles : unSelectedStyles
-              }`}
-              id="profile-tab"
-              data-tabs-target="#profile"
-              type="button"
-              role="tab"
-              aria-controls="profile"
-              aria-selected="false"
-              onClick={() => setSelectedTab(20)}
-            >
-              Your Friends
-            </button>
-          </li>
-        </ul>
-      </div>
-      <CustomTabPanel index={0}>
-        <InviteForm />
-      </CustomTabPanel>
-      <CustomTabPanel index={10}>
-        <InviteForm />
-      </CustomTabPanel>
-      <CustomTabPanel index={20}>
-        <InviteForm />
-      </CustomTabPanel>
-    </section>
+              <li className="" role="presentation">
+                <button
+                  className={`inline-block px-12 py-4 rounded-tl-xl font-poppins text-base leading-6 ${
+                    selecetedTab === 0 ? selectedStyles : unSelectedStyles
+                  }`}
+                  id="profile-tab"
+                  data-tabs-target="#profile"
+                  type="button"
+                  role="tab"
+                  aria-controls="profile"
+                  aria-selected="false"
+                  onClick={() => setSelectedTab(0)}
+                >
+                  Join
+                </button>
+              </li>
+              <li className="" role="presentation">
+                <button
+                  className={`inline-block px-3 py-4 font-poppins text-base leading-6 border-r border-[rgba(255, 255, 255, 0.50)] ${
+                    selecetedTab === 10 ? selectedStyles : unSelectedStyles
+                  }`}
+                  id="profile-tab"
+                  data-tabs-target="#profile"
+                  type="button"
+                  role="tab"
+                  aria-controls="profile"
+                  aria-selected="false"
+                  onClick={() => setSelectedTab(10)}
+                >
+                  Leaderboard
+                </button>
+              </li>
+              <li className="" role="presentation">
+                <button
+                  className={`inline-block px-4 py-4 text-base leading- rounded-tr-xl ${
+                    selecetedTab === 20 ? selectedStyles : unSelectedStyles
+                  }`}
+                  id="profile-tab"
+                  data-tabs-target="#profile"
+                  type="button"
+                  role="tab"
+                  aria-controls="profile"
+                  aria-selected="false"
+                  onClick={() => setSelectedTab(20)}
+                >
+                  Your Friends
+                </button>
+              </li>
+            </ul>
+          </div>
+          <CustomTabPanel index={0}>
+            <InviteForm />
+          </CustomTabPanel>
+          <CustomTabPanel index={10}>
+            <InviteForm />
+          </CustomTabPanel>
+          <CustomTabPanel index={20}>
+            <InviteForm />
+          </CustomTabPanel>
+        </div>
+      </section>
+    </div>
   );
 };
 
