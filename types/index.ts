@@ -16,3 +16,9 @@ export interface CustomInputProps {
   imageSrc: string;
   name: string;
 }
+
+export interface SocialIconProps {
+  src: string;
+  alt: string;
+  style?: string;
+}

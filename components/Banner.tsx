@@ -2,7 +2,7 @@ import Image from "next/image";
 import React from "react";
 import { motion } from "framer-motion";
 
-const Topic = () => {
+const Banner = () => {
   return (
     <section className="w-[80%] relative">
       <motion.span
@@ -72,4 +72,4 @@ const Topic = () => {
   );
 };
 
-export default Topic;
+export default Banner;

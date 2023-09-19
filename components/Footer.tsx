@@ -1,5 +1,6 @@
 import Image from "next/image";
 import React from "react";
+import { SocialIcon } from ".";
 
 const Footer = () => {
   return (
@@ -26,30 +27,13 @@ const Footer = () => {
               </li>
             </ul>
             <ul className="flex items-center justify-center ml-12">
-              <li className="cursor-pointer hover:opacity-80 duration-300 ease-out transition-all">
-                <Image
-                  src={"/images/twitter.svg"}
-                  width={24}
-                  height={24}
-                  alt="twitter"
-                />
-              </li>
-              <li className="mx-6 cursor-pointer hover:opacity-80 duration-300 ease-out transition-all">
-                <Image
-                  src={"/images/linkedin.svg"}
-                  width={24}
-                  height={24}
-                  alt="linkedin"
-                />
-              </li>
-              <li className="cursor-pointer hover:opacity-80 duration-300 ease-out transition-all">
-                <Image
-                  src={"/images/discord.svg"}
-                  width={24}
-                  height={24}
-                  alt="discord"
-                />
-              </li>
+              <SocialIcon src="/images/twitter.svg" alt="Twitter" />
+              <SocialIcon
+                src="/images/linkedin.svg"
+                alt="LinkedIn"
+                style="mx-6"
+              />
+              <SocialIcon src="/images/discord.svg" alt="Discord" />
             </ul>
           </div>
         </div>
