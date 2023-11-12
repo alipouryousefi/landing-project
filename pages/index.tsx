@@ -1,11 +1,28 @@
-import { Footer, Tabs, Banner } from "@/components";
+import React, { useRef } from 'react';
 
-export default function Home() {
+const FullScreenComponent = () => {
+  const containerRef = useRef(null);
+
+  const requestFullScreen = () => {
+    const container = containerRef.current;
+
+    if (container) {
+      if (container.requestFullscreen) {
+        container.requestFullscreen();
+      } else if (container.webkitRequestFullscreen) {
+        container.webkitRequestFullscreen();
+      } else if (container.msRequestFullscreen) {
+        container.msRequestFullscreen();
+      }
+    }
+  };
+
   return (
-    <main className="px-12 flex justify-center items-center flex-col mt-32">
-      <Banner />
-      <Tabs />
-      <Footer />
-    </main>
+    <div ref={containerRef}>
+      <button onClick={requestFullScreen}>Go Fullscreen</button>
+      {/* Your content goes here */}
+    </div>
   );
-}
+};
+
+export default FullScreenComponent;
