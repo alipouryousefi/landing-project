@@ -4,7 +4,7 @@ const FullScreenComponent = () => {
   const containerRef = useRef(null);
 
   const requestFullScreen = () => {
-    const container = containerRef.current;
+    const container:any = containerRef.current;
 
     if (container) {
       if (container.requestFullscreen) {
